@@ -1720,10 +1720,13 @@ async function sendMessage() {
   setInputDisabled(true);
 
   try {
-    const response = await fetch('/.netlify/functions/chat', {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'x-api-key': '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',
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-direct-browser-calls': 'true'
       },
       body: JSON.stringify({
         model: 'claude-haiku-4-5-20251001',
