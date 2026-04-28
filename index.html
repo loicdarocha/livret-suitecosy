@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>La Suite Cosy — Spa Privatif · Cournon-d'Auvergne</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -1268,7 +1268,7 @@ function goTo(id) {
   position: fixed;
   bottom: 28px;
   right: 28px;
-  z-index: 999;
+  z-index: 9999;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -1300,7 +1300,7 @@ function goTo(id) {
   position: fixed;
   bottom: 100px;
   right: 28px;
-  z-index: 998;
+  z-index: 9998;
   width: 360px;
   max-height: 520px;
   background: #fff;
@@ -1464,12 +1464,13 @@ function goTo(id) {
   border: 1.5px solid #e5e0d8;
   border-radius: 100px;
   padding: 9px 16px;
-  font-size: 13px;
+  font-size: 16px; /* ≥16px = pas de zoom iOS au focus */
   font-family: 'Jost', sans-serif;
   color: #1a1a1a;
   outline: none;
   transition: border-color 0.2s;
   background: #faf8f5;
+  transform: translateZ(0); /* force GPU layer */
 }
 #chat-input:focus { border-color: var(--gold); }
 
